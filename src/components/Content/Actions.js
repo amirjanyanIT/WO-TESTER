@@ -9,17 +9,18 @@ const urlBlock = {display:'inline-block',marginTop:'10px',position:'relative',to
 const MethodStyle = { padding: '5px', backgroundColor: 'rgb(62, 114, 138)', color: 'white',}
 const BasePathStyle = {backgroundColor: 'rgb(83, 83, 83)',color: 'white',padding: '5px 0px 5px 5px',}
 const Action = {padding: '5px 5px 5px 0px',color: 'white',backgroundColor: 'rgb(222, 83, 83)',}
-const FabStyle = {display:'inline-block',marginLeft:'50px',backgroundColor:'rgb(222, 83, 83)',color:'white'}
+const FabStyle = {display:'inline-block',marginLeft:'50px',backgroundColor:'rgb(37, 180, 109)',color:'white'}
 
 class Actions extends Component {
     
     getMethodResult(){ 
-        let callURL = `https://api.wo.softberg.org/?action=${this.props.currentAction.endPont}`;
+        let callURL = `https://api.wo.softberg.org/?action=${this.props.currentAction.endPoint}`;
         let parameters = {}
         
         this.props.currentAction.parameters.forEach(parameter => {
             parameters[parameter.name] = $(`input[id=${parameter.name}]`).val()
         })
+
         this.props.dispatch({type:'SET_JSON_STATUS',payload:'Loading'})
         $.ajax({
             url:callURL,
@@ -38,6 +39,7 @@ class Actions extends Component {
             }
         })
     }
+    
     render() {
         return (
             <>
@@ -45,7 +47,7 @@ class Actions extends Component {
                     <div style={urlBlock}>
                         <span style={MethodStyle}> {this.props.currentAction.method.toUpperCase()} </span>
                         <span style={BasePathStyle}>http://api.wo.softberg.org?action=</span>
-                        <span style={Action}>{this.props.currentAction.endPont}</span>
+                        <span style={Action}>{this.props.currentAction.endPoint}</span>
                     </div>
                     <Fab style={FabStyle} onClick={this.getMethodResult.bind(this)}>Call</Fab>
                 </Grid>

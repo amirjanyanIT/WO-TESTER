@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import Dropdown from './Dropdown';
 class SideBar extends Component {
     componentDidMount() {
 
@@ -19,7 +19,7 @@ class SideBar extends Component {
                     {this.props.actions.map((action,index) => {
                         return (
                             <div onClick={this.currentAction.bind(this,index)} className="action" key={index}>
-                                <span>{action.label}</span>
+                                <span className="category">{action.category}</span><span> {action.label}</span>
                             </div>
                         )
                     })}
