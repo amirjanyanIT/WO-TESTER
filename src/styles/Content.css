@@ -1,0 +1,101 @@
+.Content {
+    padding: 40px;
+    position: relative;
+    top: 50px;
+    left:25%;
+    width: 70.8%;
+    text-align: center;
+    height: calc(100% - 130px);
+}
+
+.block {
+    margin: 0px 0px 10px 0px !important;
+    padding: 10px;
+}
+
+.block span{ 
+    line-height: 10px
+}
+
+.block:nth-child(1) {
+    background-color: rgba(128, 128, 128, 0.17);
+    border-radius: 2px;
+}
+
+.block:nth-child(2) {
+    min-height: 200px;
+}
+
+.block:nth-child(3) {
+    min-height: 350px;
+}
+
+.Content .no-action-selected {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(100vh - 120px);
+    border: 1px solid rgb(204, 204, 204);
+    border-style: dashed;
+}
+
+.Content .no-action-selected span  {
+    color: rgb(177, 177, 177);
+    font-weight: bold;
+    font-family: Hack;
+    font-size: 40px;
+}
+
+.Parameters {
+    background-color: rgb(230, 230, 230);
+}
+
+.Parameters label {
+    line-height: 35px;
+    margin-right: 15px;
+    color: rgb(62, 114, 138);
+    font-weight: bold;
+}
+
+
+.Response { 
+    background-color: rgb(230, 230, 230);
+}
+
+.Response .passive-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 55vh;
+}
+
+.Response .json-block {
+    text-align: left;
+}
+
+.Response .passive-block span {
+    font-size: 40px;
+}
+
+.Response .loader-style  {
+    height: 30px;
+    position: relative;
+    left: 45%;
+    width: 132px;
+    top: 78px;
+}
+
+.theme-control-block {
+    text-align: right;
+
+}
+
+.theme-control-block button { 
+    border: 1px solid gray;
+    padding: 2px;
+    width: 40px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}

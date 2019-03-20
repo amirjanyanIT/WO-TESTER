@@ -1,0 +1,28 @@
+.SideBar {
+    background-color: rgba(32, 31, 31, 0.96);
+    width: 25%;
+    position: fixed;
+    display: inline-block;
+    top: 50px;
+    height: calc(100vh);
+}
+
+.sidebar-title {
+    text-align: center;
+    font-size: 20px;
+    font-family: Hack;
+    color:rgba(142, 219, 255, 0.73);
+    padding: 5px;
+    border-bottom: 1px solid rgba(67, 130, 159, 0.82);
+}
+
+.action-list {
+    margin-top:10px;
+}
+
+.action {
+    padding: 4px 0px 4px 5px;
+    background-color: rgba(67, 130, 159, 0.82);
+    color: white;
+    cursor: pointer;
+}
