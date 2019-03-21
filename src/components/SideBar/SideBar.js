@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 class SideBar extends Component {
-    componentDidMount() {
-
-    }
     currentAction(index) {
         this.props.dispatch({type:'SET_CURRENT_ACTION',payload:index});
         this.props.dispatch({type:'SET_JSON_STATUS',payload:'Passive'})
@@ -17,7 +14,10 @@ class SideBar extends Component {
                 <div className="action-list">
                     {this.props.actions.map((action,index) => {
                         return (
-                            <div onClick={this.currentAction.bind(this,index)} className="action" key={index}>
+                            <div 
+                            onClick={this.currentAction.bind(this,index)} 
+                            className={(this.props.currentAction && action.label === this.props.currentAction.label ? 'action active' : 'action')} 
+                            key={index}>
                                 <span className="method">{action.method.toUpperCase()}</span><span> {action.label}</span>
                             </div>
                         )
@@ -31,7 +31,8 @@ class SideBar extends Component {
 
 const mapStateToProps = ({ Actions }) => {
     return {
-        actions:Actions.actions
+        actions:Actions.actions,
+        currentAction:Actions.currentAction
     }
 }
 

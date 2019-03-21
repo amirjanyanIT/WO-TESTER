@@ -36,6 +36,26 @@ export default (state = initialState, action) => {
                 ...state,
                 currentAction: state.actions[action.payload]
             }
+        case 'SET_CURRENT_ACTION_PARAMETER_VALUE':
+            let currentAction = state.currentAction;
+            let { parameters } = currentAction;
+
+            parameters = parameters.map((parameter) => {
+                if(parameter.name === action.payload.name) {
+                    return {
+                        ...parameter,
+                        value:action.payload.value
+                    }
+                }
+                else {
+                    return parameter;
+                }
+            });
+            currentAction.parameters = parameters;
+            return {
+                ...state,
+                currentAction
+            }
         default:
             return state;
     }

@@ -8,7 +8,7 @@ const urlBlock = {display:'inline-block',marginTop:'10px',position:'relative',to
 
 const MethodStyle = { padding: '5px', backgroundColor: 'rgb(62, 114, 138)', color: 'white',}
 const BasePathStyle = {backgroundColor: 'rgb(83, 83, 83)',color: 'white',padding: '5px 0px 5px 5px',}
-const Action = {padding: '5px 5px 5px 0px',color: 'white',backgroundColor: 'rgb(222, 83, 83)',}
+const Action = {padding: '5px 5px 5px 0px',color: 'white',backgroundColor: 'rgb(37, 180, 109)',}
 const FabStyle = {display:'inline-block',marginLeft:'50px',backgroundColor:'rgb(37, 180, 109)',color:'white'}
 
 class Actions extends Component {
@@ -28,14 +28,8 @@ class Actions extends Component {
             data:parameters,
             dataType:'json',
             success:(response) => {
-                if(response.status !== 'error') {
-                    this.props.dispatch({type:'SET_JSON',payload:response})
-                    this.props.dispatch({type:'SET_JSON_STATUS',payload:'Success'})
-                }
-                else {
-                    localStorage.removeItem('userInfo');
-                    this.props.history.push('/signIn');
-                }
+                this.props.dispatch({type:'SET_JSON',payload:response})
+                this.props.dispatch({type:'SET_JSON_STATUS',payload:'Success'})
             }
         })
     }

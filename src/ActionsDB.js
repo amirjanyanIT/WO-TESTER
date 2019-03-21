@@ -3,27 +3,7 @@ export default [
         method: 'get',
         endPoint: 'user_getUserData',
         category: 'User',
-        label: 'get User Data',
-        parameters: [
-            {
-                name: 'userId',
-                placeHolder: 'User Id',
-                value: '',
-                disabled: true
-            },
-            {
-                name: 'apiKey',
-                placeHolder: 'API Key',
-                value: '',
-                disabled: true
-            },
-        ]
-    },
-    {
-        method: 'get',
-        endPoint: 'user_getUserData',
-        category: 'User',
-        label: 'get User Data',
+        label: 'Get User Data',
         parameters: [
             {
                 name: 'userId',
@@ -46,14 +26,14 @@ export default [
         label: 'Sign Up',
         parameters: [
             {
-                name: 'userId',
-                placeHolder: 'User Id',
+                name: 'username',
+                placeHolder: 'User Name',
                 value: '',
                 disabled: false
             },
             {
                 name: 'password',
-                placeHolder: 'Users Password',
+                placeHolder: 'User Password',
                 value: '',
                 disabled: false
             },
@@ -66,14 +46,14 @@ export default [
         category: 'User',
         parameters: [
             {
-                name: 'userId',
-                placeHolder: 'User Id',
+                name: 'username',
+                placeHolder: 'User Name',
                 value: '',
                 disabled: false
             },
             {
                 name: 'password',
-                placeHolder: 'Users Password',
+                placeHolder: 'User Password',
                 value: '',
                 disabled: false
             },
@@ -89,8 +69,14 @@ export default [
                 name: 'userId',
                 placeHolder: 'User Id',
                 value: '',
-                disabled: false
-            }
+                disabled: true
+            },
+            {
+                name: 'apiKey',
+                placeHolder: 'API Key',
+                value: '',
+                disabled: true
+            },
         ]
     },
     {
@@ -102,6 +88,12 @@ export default [
             {
                 name: 'userId',
                 placeHolder: 'User Id',
+                value: '',
+                disabled: true
+            },
+            {
+                name: 'apiKey',
+                placeHolder: 'API Key',
                 value: '',
                 disabled: true
             },
@@ -126,6 +118,12 @@ export default [
                 disabled: true
             },
             {
+                name: 'apiKey',
+                placeHolder: 'API Key',
+                value: '',
+                disabled: true
+            },
+            {
                 name: 'taskId',
                 placeHolder: 'Task ID',
                 value: '',
@@ -142,6 +140,12 @@ export default [
             {
                 name: 'userId',
                 placeHolder: 'User Id',
+                value: '',
+                disabled: true
+            },
+            {
+                name: 'apiKey',
+                placeHolder: 'API Key',
                 value: '',
                 disabled: true
             },
@@ -166,27 +170,26 @@ export default [
         category: 'Task',
         parameters: [
             {
+                name: 'userId',
+                placeHolder: 'User Id',
+                value: '',
+                disabled: true
+            },
+            {
+                name: 'apiKey',
+                placeHolder: 'API Key',
+                value: '',
+                disabled: true
+            },
+            {
                 name: 'taskId',
                 placeHolder: 'Task ID',
                 value: '',
                 disabled: false
             },
             {
-                name: 'userId',
-                placeHolder: 'User Id',
-                value: '',
-                disabled: true
-            },
-
-            {
                 name: 'title',
                 placeHolder: 'Task Id',
-                value: '',
-                disabled: false
-            },
-            {
-                name: 'description',
-                placeHolder: 'Task Description',
                 value: '',
                 disabled: false
             },
@@ -223,6 +226,12 @@ export default [
                 disabled: true
             },
             {
+                name: 'apiKey',
+                placeHolder: 'API Key',
+                value: '',
+                disabled: true
+            },
+            {
                 name: 'title',
                 placeHolder: 'Title',
                 value: '',
@@ -243,16 +252,22 @@ export default [
         category: 'Task',
         parameters: [
             {
-                name: 'taskId',
-                placeHolder: 'Task ID',
-                value: '',
-                disabled: false
-            },
-            {
                 name: 'userId',
                 placeHolder: 'User Id',
                 value: '',
                 disabled: true
+            },
+            {
+                name: 'apiKey',
+                placeHolder: 'API Key',
+                value: '',
+                disabled: true
+            },
+            {
+                name: 'taskId',
+                placeHolder: 'Task ID',
+                value: '',
+                disabled: false
             },
         ]
     },
@@ -263,16 +278,22 @@ export default [
         category: 'Task',
         parameters: [
             {
-                name: 'taskId',
-                placeHolder: 'Task ID',
-                value: '',
-                disabled: false
-            },
-            {
                 name: 'userId',
                 placeHolder: 'User Id',
                 value: '',
                 disabled: true
+            },
+            {
+                name: 'apiKey',
+                placeHolder: 'API Key',
+                value: '',
+                disabled: true
+            },
+            {
+                name: 'taskId',
+                placeHolder: 'Task ID',
+                value: '',
+                disabled: false
             },
         ]
     },
@@ -283,16 +304,22 @@ export default [
         category: 'Task',
         parameters: [
             {
-                name: 'taskId',
-                placeHolder: 'Task ID',
-                value: '',
-                disabled: false
-            },
-            {
                 name: 'userId',
                 placeHolder: 'User Id',
                 value: '',
                 disabled: true
+            },
+            {
+                name: 'apiKey',
+                placeHolder: 'API Key',
+                value: '',
+                disabled: true
+            },
+            {
+                name: 'taskId',
+                placeHolder: 'Task ID',
+                value: '',
+                disabled: false
             },
             {
                 name: 'noteText',
@@ -309,16 +336,22 @@ export default [
         category: 'Task',
         parameters: [
             {
-                name: 'taskId',
-                placeHolder: 'Task ID',
-                value: '',
-                disabled: false
-            },
-            {
                 name: 'userId',
                 placeHolder: 'User Id',
                 value: '',
                 disabled: true
+            },
+            {
+                name: 'apiKey',
+                placeHolder: 'API Key',
+                value: '',
+                disabled: true
+            },
+            {
+                name: 'taskId',
+                placeHolder: 'Task ID',
+                value: '',
+                disabled: false
             },
             {
                 name: 'noteId',
@@ -341,16 +374,22 @@ export default [
         category: 'Task',
         parameters: [
             {
-                name: 'taskId',
-                placeHolder: 'Task ID',
-                value: '',
-                disabled: false
-            },
-            {
                 name: 'userId',
                 placeHolder: 'User Id',
                 value: '',
                 disabled: true
+            },
+            {
+                name: 'apiKey',
+                placeHolder: 'API Key',
+                value: '',
+                disabled: true
+            },
+            {
+                name: 'taskId',
+                placeHolder: 'Task ID',
+                value: '',
+                disabled: false
             },
             {
                 name: 'noteId',

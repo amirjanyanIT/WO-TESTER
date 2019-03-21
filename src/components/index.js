@@ -10,7 +10,6 @@ class Index extends Component{
     componentDidMount() {
         this.checkUser();
     }
-
     checkUser() {
         if(!localStorage.getItem('userInfo')) {
             this.props.history.push('signIn')

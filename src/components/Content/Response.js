@@ -3,7 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import { connect } from 'react-redux';
 import ReactJson from 'react-json-view';
 import Loader from 'react-loader-spinner'
-const passiveExtraStyle = { color:'rgb(222, 83, 83)', fontWeight:'bold' }
+const passiveExtraStyle = { color:'rgb(37, 180, 109)', fontWeight:'bold' }
 
 class Response extends Component {
     constructor() {

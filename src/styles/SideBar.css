@@ -28,6 +28,7 @@
     margin: 10px 0px;
 }
 
+
 .action .method {
     padding: 4px 10px;
     border-radius: 2px;
@@ -36,4 +37,8 @@
     text-align: center;
     display: inline-block;
     background-color: rgb(37, 180, 109);
+}
+
+.action.active {
+    background-color:rgb(37, 180, 109);
 }
