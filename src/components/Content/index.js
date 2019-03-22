@@ -6,27 +6,27 @@ import Parameters from './Parameters';
 import Response from './Response';
 import { connect } from 'react-redux';
 class Content extends Component {
-    componentDidUpdate() {
-    }
-    render(){
-        return(
+    render() {
+        return (
             <div className="Content">
-            <Grid container>
-                {this.props.currenAction 
-                ?
-                    (<>
-                        
-                        <Actions/>
-                        <Parameters/>
-                        <Response/>
-                        
-                    </>)
-                    
-                :   (<div className="no-action-selected">
-                        <span>SELECT ACTION</span>
-                    </div>)
-                }
-            </Grid>
+                <Grid container>
+
+                    {this.props.currenAction &&
+                        (<>
+
+                            <Actions />
+                            <Parameters />
+                            <Response />
+
+                        </>)
+                    }
+
+                    {!this.props.currenAction &&
+                        (<div className="no-action-selected">
+                            <span>SELECT ACTION</span>
+                        </div>)
+                    }
+                </Grid>
             </div>
         )
     }
@@ -34,8 +34,7 @@ class Content extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        User:state.User,
-        currenAction:state.Actions.currentAction
+        currenAction: state.Actions.currentAction
     };
 }
 

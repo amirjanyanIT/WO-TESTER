@@ -3,12 +3,6 @@ import Grid from '@material-ui/core/Grid';
 import { connect } from 'react-redux';
 import ReactJson from 'react-json-view';
 import Loader from 'react-loader-spinner'
-const passiveExtraStyle = { color:'rgb(37, 180, 109)', fontWeight:'bold' }
-
-const reactJsonStyle = {
-    height:'400px',
-    overflowY:'auto'
-}
 
 class Response extends Component {
     constructor() {
@@ -25,7 +19,7 @@ class Response extends Component {
             })
         }
     }
-
+    
     changeJsonTheme( {target} ){
         switch(target.innerHTML){
             case 'Light':
@@ -45,7 +39,7 @@ class Response extends Component {
             <Grid item lg={12} md={12} sm={12} xs={12} className="Response block">
                 { this.props.Json.status === 'Passive' && 
                     (<div className="passive-block">
-                        <span>Press <span style={passiveExtraStyle}>CALL</span> Button to get result</span>
+                        <span>Press <span>CALL</span> Button to get result</span>
                      </div>
                     )
                 }
@@ -67,7 +61,7 @@ class Response extends Component {
                     </div>
                     <div className="json-block">
                         <h3>JSON</h3>
-                        <ReactJson style={reactJsonStyle} src={this.props.Json.value} theme={this.state.responseSyntax}/>
+                        <ReactJson src={this.props.Json.value} theme={this.state.responseSyntax}/>
                     </div>
                   </>)
                 }
@@ -77,7 +71,7 @@ class Response extends Component {
     }
 }
 
-let mapStateToProps = ({ Json },dispatch) => {
+let mapStateToProps = ({ Json }) => {
     return { Json }
 }
 

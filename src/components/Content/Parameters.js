@@ -3,9 +3,12 @@ import Grid from '@material-ui/core/Grid';
 import { connect } from 'react-redux';
 import TextField from '@material-ui/core/TextField';
 
+// Actions
+import SetParameterValueAction from '../../Actions/Content/Parameters/SetParameterValueAction';
+
 class Parameters extends Component {
-    setParameterValue({ target }) {
-        this.props.setParameterValue(target.id, target.value);
+    setParameterValueHandler({ target }) {
+        SetParameterValueAction(this.props.dispatch,target.id, target.value)
     }
     render() {
         return (
@@ -20,12 +23,12 @@ class Parameters extends Component {
                                     </Grid>
                                     <Grid item lg={8} md={8} sm={8} style={{textAlign:'left'}}>
                                         <TextField 
-                                        type={parameter.type}
-                                        placeholder={parameter.placeHolder} 
-                                        id={parameter.name} value={parameter.value} 
-                                        disabled={parameter.disabled} 
-                                        onChange={this.setParameterValue.bind(this)} 
-                                        style={{width:'80%'}}
+                                            type={parameter.type}
+                                            placeholder={parameter.placeHolder} 
+                                            id={parameter.name} value={parameter.value} 
+                                            disabled={parameter.disabled} 
+                                            onChange={this.setParameterValueHandler.bind(this)} 
+                                            style={{width:'80%'}}
                                         />
                                     </Grid>
                                 </Grid>
@@ -46,15 +49,4 @@ const mapStateToProps = ({ Actions }) => {
     return { parameters }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        setParameterValue: (name, value) => {
-            dispatch({
-                type: 'SET_CURRENT_ACTION_PARAMETER_VALUE',
-                payload: { name, value }
-            })
-        }
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Parameters);
+export default connect(mapStateToProps)(Parameters);

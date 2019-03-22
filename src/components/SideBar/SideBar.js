@@ -6,6 +6,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import TextField from '@material-ui/core/TextField';
 
+import SetCurrentAction from '../../Actions/SideBar/SetCurrentAction'
 class SideBar extends Component {
     constructor() {
         super();
@@ -14,6 +15,7 @@ class SideBar extends Component {
             currentAction:null
         }
     }
+
     componentDidMount() {
         const mutatedActions = this.props.actions.map((action) => {
             return {...action,visibility:true}
@@ -23,11 +25,12 @@ class SideBar extends Component {
             currentAction:null,
         });
     }
+
     currentActionHandler(index) {
-        this.props.dispatch({ type: 'SET_CURRENT_ACTION', payload: index });
-        this.props.dispatch({ type: 'SET_JSON_STATUS', payload: 'Passive' });
+        SetCurrentAction(this.props.dispatch,index)
         this.setState({ currentAction:this.state.actions[index] });
     }
+
 
     filterHandler({ target }) {
         const filterValue = target.value;

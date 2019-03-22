@@ -28,3 +28,22 @@
 .Footer {
     min-height: 30px;
 }
+
+.signIn-textField{
+    width: 100% !important;
+    margin: 0px 0px 20px 0px !important;
+}
+
+.signIn-textField input {
+    color: white !important;
+}
+
+.signIn-textField input::placeholder {
+    color: white !important;
+}
+
+.sign-in-button {
+    width: 100% !important;
+    padding: 10px !important
+}
+
