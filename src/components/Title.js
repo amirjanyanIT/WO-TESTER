@@ -9,7 +9,7 @@ const iconStyle = {
 export default () => {
     return (
         <div className="title">
-            <span className="">WalkMan API TEST  </span>
+            <span className="">WO API TESTER </span>
             <Brightness5 style={iconStyle} />
         </div>
     )

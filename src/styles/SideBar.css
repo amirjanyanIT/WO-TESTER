@@ -41,7 +41,7 @@
 }
 
 .list-item.active {
-    background-color:rgb(180, 37, 128) !important;
+    background-color:rgba(62, 114, 138, 0.37) !important;
 }
 
 .item-text span {
