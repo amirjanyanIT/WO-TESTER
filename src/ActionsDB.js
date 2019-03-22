@@ -20,46 +20,6 @@ export default [
         ]
     },
     {
-        method: 'post',
-        endPoint: 'user_signUp',
-        category: 'User',
-        label: 'Sign Up',
-        parameters: [
-            {
-                name: 'username',
-                placeHolder: 'User Name',
-                value: '',
-                disabled: false
-            },
-            {
-                name: 'password',
-                placeHolder: 'User Password',
-                value: '',
-                disabled: false
-            },
-        ]
-    },
-    {
-        method: 'post',
-        endPoint: 'user_signIn',
-        label: 'Sign In',
-        category: 'User',
-        parameters: [
-            {
-                name: 'username',
-                placeHolder: 'User Name',
-                value: '',
-                disabled: false
-            },
-            {
-                name: 'password',
-                placeHolder: 'User Password',
-                value: '',
-                disabled: false
-            },
-        ]
-    },
-    {
         method: 'get',
         endPoint: 'task_getAll',
         category: 'Task',

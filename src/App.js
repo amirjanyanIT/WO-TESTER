@@ -8,7 +8,7 @@ import './styles/Content.css';
 import './styles/Title.css';
 
 
-// components
+// Main Components
 import SignIn from './components/SignIn';
 import Index from './components/index';
 import { BrowserRouter as Router, Route } from "react-router-dom";

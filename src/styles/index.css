@@ -43,3 +43,19 @@ body {
     margin-right: 15px;
     cursor: pointer;
 }
+
+.method.get {
+    background-color:rgb(21, 159, 115);
+}
+
+.method.post {
+    background-color:rgb(104, 191, 82);
+}
+
+.method.put {
+    background-color:rgb(119, 82, 191);
+}
+
+.method.delete {
+    background-color:rgb(191, 82, 82);
+}

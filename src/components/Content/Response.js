@@ -5,6 +5,11 @@ import ReactJson from 'react-json-view';
 import Loader from 'react-loader-spinner'
 const passiveExtraStyle = { color:'rgb(37, 180, 109)', fontWeight:'bold' }
 
+const reactJsonStyle = {
+    maxHeight:'400px',
+    overflowY:'auto'
+}
+
 class Response extends Component {
     constructor() {
         super();
@@ -62,7 +67,7 @@ class Response extends Component {
                     </div>
                     <div className="json-block">
                         <h3>JSON</h3>
-                        <ReactJson src={this.props.Json.value} theme={this.state.responseSyntax}/>
+                        <ReactJson style={reactJsonStyle} src={this.props.Json.value} theme={this.state.responseSyntax}/>
                     </div>
                   </>)
                 }

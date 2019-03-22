@@ -29,16 +29,26 @@
 }
 
 
-.action .method {
-    padding: 4px 10px;
-    border-radius: 2px;
-    margin: 0px 5px;
-    width: 10%;
+
+.action-list .method {
+    display: inline-block !important;
+    padding: 2px;
+    width:60px !important;
     text-align: center;
-    display: inline-block;
-    background-color: rgb(37, 180, 109);
+    border-radius:2px;
+    margin-right: 5px;
 }
 
-.action.active {
-    background-color:rgb(37, 180, 109);
+.list-item.active {
+    background-color:rgb(180, 37, 128) !important;
+}
+
+.item-text span {
+    color:white !important;
+    font-size: 14px !important; 
+}
+
+.list-item{
+    background:rgb(62, 114, 138) !important;
+    margin-bottom: 5px !important;
 }

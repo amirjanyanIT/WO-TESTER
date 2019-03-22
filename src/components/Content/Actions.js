@@ -6,7 +6,7 @@ import $ from 'jquery';
 
 const urlBlock = {display:'inline-block',marginTop:'10px',position:'relative',top:'4px'}
 
-const MethodStyle = { padding: '5px', backgroundColor: 'rgb(62, 114, 138)', color: 'white',}
+const MethodStyle = { padding: '5px',color: 'white'}
 const BasePathStyle = {backgroundColor: 'rgb(83, 83, 83)',color: 'white',padding: '5px 0px 5px 5px',}
 const Action = {padding: '5px 5px 5px 0px',color: 'white',backgroundColor: 'rgb(37, 180, 109)',}
 const FabStyle = {display:'inline-block',marginLeft:'50px',backgroundColor:'rgb(37, 180, 109)',color:'white'}
@@ -39,7 +39,7 @@ class Actions extends Component {
             <>
                 <Grid item lg={12} md={12} sm={12} xs={12} className="block">
                     <div style={urlBlock}>
-                        <span style={MethodStyle}> {this.props.currentAction.method.toUpperCase()} </span>
+                        <span style={MethodStyle} class={`url-method method ${this.props.currentAction.method}`}> {this.props.currentAction.method.toUpperCase()} </span>
                         <span style={BasePathStyle}>http://api.wo.softberg.org?action=</span>
                         <span style={Action}>{this.props.currentAction.endPoint}</span>
                     </div>
