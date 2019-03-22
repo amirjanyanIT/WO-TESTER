@@ -285,7 +285,7 @@ export default [
                 name: 'noteText',
                 placeHolder: 'Note',
                 value: '',
-                disabled: true
+                disabled: false
             },
         ]
     },
@@ -355,7 +355,7 @@ export default [
                 name: 'noteId',
                 placeHolder: 'Note Id',
                 value: '',
-                disabled: true
+                disabled: false
             },
         ]
     }

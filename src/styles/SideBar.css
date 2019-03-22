@@ -3,8 +3,9 @@
     width: 25%;
     position: fixed;
     display: inline-block;
-    top: 50px;
+    top: 58px;
     height: calc(100vh);
+    overflow-y: auto;
 }
 
 .sidebar-title {
@@ -51,4 +52,25 @@
 .list-item{
     background:rgb(62, 114, 138) !important;
     margin-bottom: 5px !important;
+}
+
+.search-field {
+    width: 95% !important;
+}
+
+.search-field div::before {
+    border-bottom: none !important;
+}
+
+.search-field div::after {
+    border-bottom: none !important;
+}
+
+.search-field input {
+    color:white !important; 
+    font-family: FontAwesome !important;
+}
+
+.search-field input::placeholder {
+    color:rgb(122, 204, 242) !important; 
 }

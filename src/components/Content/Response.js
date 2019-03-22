@@ -6,7 +6,7 @@ import Loader from 'react-loader-spinner'
 const passiveExtraStyle = { color:'rgb(37, 180, 109)', fontWeight:'bold' }
 
 const reactJsonStyle = {
-    maxHeight:'400px',
+    height:'400px',
     overflowY:'auto'
 }
 

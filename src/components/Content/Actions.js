@@ -39,7 +39,7 @@ class Actions extends Component {
             <>
                 <Grid item lg={12} md={12} sm={12} xs={12} className="block">
                     <div style={urlBlock}>
-                        <span style={MethodStyle} class={`url-method method ${this.props.currentAction.method}`}> {this.props.currentAction.method.toUpperCase()} </span>
+                        <span style={MethodStyle} className={`url-method method ${this.props.currentAction.method}`}> {this.props.currentAction.method.toUpperCase()} </span>
                         <span style={BasePathStyle}>http://api.wo.softberg.org?action=</span>
                         <span style={Action}>{this.props.currentAction.endPoint}</span>
                     </div>
