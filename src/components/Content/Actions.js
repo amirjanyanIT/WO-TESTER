@@ -3,7 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import Fab from '@material-ui/core/Fab';
 import { connect } from 'react-redux';
 import $ from 'jquery';
-
+import moment from 'moment';
 const urlBlock = {display:'inline-block',marginTop:'10px',position:'relative',top:'4px'}
 
 const MethodStyle = { padding: '5px',color: 'white'}
@@ -18,9 +18,19 @@ class Actions extends Component {
         let parameters = {}
         
         this.props.currentAction.parameters.forEach(parameter => {
-            parameters[parameter.name] = $(`input[id=${parameter.name}]`).val()
+            switch(parameter.type){
+                case 'text':
+                    parameters[parameter.name] = $(`input[id=${parameter.name}]`).val()
+                break;
+                case 'date':
+                    parameters[parameter.name] = moment($(`input[id=${parameter.name}]`).val()).unix()
+                break;
+                default:
+                    parameters[parameter.name] = $(`input[id=${parameter.name}]`).val()
+            }
         })
 
+        console.log(parameters);
         this.props.dispatch({type:'SET_JSON_STATUS',payload:'Loading'})
         $.ajax({
             url:callURL,

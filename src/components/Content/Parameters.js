@@ -20,6 +20,7 @@ class Parameters extends Component {
                                     </Grid>
                                     <Grid item lg={8} md={8} sm={8} style={{textAlign:'left'}}>
                                         <TextField 
+                                        type={parameter.type}
                                         placeholder={parameter.placeHolder} 
                                         id={parameter.name} value={parameter.value} 
                                         disabled={parameter.disabled} 

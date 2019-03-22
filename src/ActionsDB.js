@@ -8,6 +8,7 @@ export default [
             {
                 name: 'userId',
                 placeHolder: 'User Id',
+                type:'text',
                 value: '',
                 disabled: true
             },
@@ -28,12 +29,14 @@ export default [
             {
                 name: 'userId',
                 placeHolder: 'User Id',
+                type:'text',
                 value: '',
                 disabled: true
             },
             {
                 name: 'apiKey',
                 placeHolder: 'API Key',
+                type:'text',
                 value: '',
                 disabled: true
             },
@@ -42,24 +45,27 @@ export default [
     {
         method: 'get',
         endPoint: 'task_getByStatus',
-        label: 'Get Task By Status',
+        label: 'Get Tasks By Status',
         category: 'Task',
         parameters: [
             {
                 name: 'userId',
                 placeHolder: 'User Id',
+                type:'text',
                 value: '',
                 disabled: true
             },
             {
                 name: 'apiKey',
                 placeHolder: 'API Key',
+                type:'text',
                 value: '',
                 disabled: true
             },
             {
                 name: 'status',
                 placeHolder: 'The Task Status [ hold, success, fail ]',
+                type:'text',
                 value: '',
                 disabled: false
             }
@@ -74,18 +80,21 @@ export default [
             {
                 name: 'userId',
                 placeHolder: 'User Id',
+                type:'text',
                 value: '',
                 disabled: true
             },
             {
                 name: 'apiKey',
                 placeHolder: 'API Key',
+                type:'text',
                 value: '',
                 disabled: true
             },
             {
                 name: 'taskId',
                 placeHolder: 'Task ID',
+                type:'text',
                 value: '',
                 disabled: false
             }
@@ -100,24 +109,56 @@ export default [
             {
                 name: 'userId',
                 placeHolder: 'User Id',
+                type:'text',
                 value: '',
                 disabled: true
             },
             {
                 name: 'apiKey',
                 placeHolder: 'API Key',
+                type:'text',
                 value: '',
                 disabled: true
             },
             {
                 name: 'title',
-                placeHolder: 'Task Id',
+                placeHolder: 'Title',
+                type:'text',
                 value: '',
                 disabled: false
             },
             {
                 name: 'description',
-                placeHolder: 'Task Description',
+                placeHolder: 'Description',
+                type:'text',
+                value: '',
+                disabled: false
+            },
+            {
+                name: 'dueDate',
+                placeHolder: 'due Date',
+                type:'date',
+                value: '',
+                disabled: false
+            },
+            {
+                name: 'status',
+                placeHolder: 'Status',
+                type:'text',
+                value: '',
+                disabled: false
+            },
+            {
+                name: 'priority',
+                placeHolder: 'Priority',
+                type:'text',
+                value: '',
+                disabled: false
+            },
+            {
+                name: 'accessibility',
+                placeHolder: 'Accessibility (Private,Public)',
+                type:'text',
                 value: '',
                 disabled: false
             },
@@ -132,42 +173,49 @@ export default [
             {
                 name: 'userId',
                 placeHolder: 'User Id',
+                type:'text',
                 value: '',
                 disabled: true
             },
             {
                 name: 'apiKey',
                 placeHolder: 'API Key',
+                type:'text',
                 value: '',
                 disabled: true
             },
             {
                 name: 'taskId',
                 placeHolder: 'Task ID',
+                type:'text',
                 value: '',
                 disabled: false
             },
             {
                 name: 'title',
                 placeHolder: 'Task Id',
+                type:'text',
                 value: '',
                 disabled: false
             },
             {
                 name: 'description',
                 placeHolder: 'Task Description',
+                type:'text',
                 value: '',
                 disabled: false
             },
             {
                 name: 'dueDate',
                 placeHolder: 'Due Date',
+                type:'date',
                 value: '',
                 disabled: false
             },
             {
                 name: 'status',
                 placeHolder: 'The Task status [ hold, success, fail ]',
+                type:'text',
                 value: '',
                 disabled: false
             },
@@ -182,24 +230,28 @@ export default [
             {
                 name: 'userId',
                 placeHolder: 'User Id',
+                type:'text',
                 value: '',
                 disabled: true
             },
             {
                 name: 'apiKey',
                 placeHolder: 'API Key',
+                type:'text',
                 value: '',
                 disabled: true
             },
             {
                 name: 'title',
                 placeHolder: 'Title',
+                type:'text',
                 value: '',
                 disabled: false
             },
             {
                 name: 'status',
                 placeHolder: 'The Task status [ hold, success, fail ]',
+                type:'text',
                 value: '',
                 disabled: false
             },
@@ -214,18 +266,21 @@ export default [
             {
                 name: 'userId',
                 placeHolder: 'User Id',
+                type:'text',
                 value: '',
                 disabled: true
             },
             {
                 name: 'apiKey',
                 placeHolder: 'API Key',
+                type:'text',
                 value: '',
                 disabled: true
             },
             {
                 name: 'taskId',
                 placeHolder: 'Task ID',
+                type:'text',
                 value: '',
                 disabled: false
             },
@@ -240,18 +295,21 @@ export default [
             {
                 name: 'userId',
                 placeHolder: 'User Id',
+                type:'text',
                 value: '',
                 disabled: true
             },
             {
                 name: 'apiKey',
                 placeHolder: 'API Key',
+                type:'text',
                 value: '',
                 disabled: true
             },
             {
                 name: 'taskId',
                 placeHolder: 'Task ID',
+                type:'text',
                 value: '',
                 disabled: false
             },
@@ -266,24 +324,28 @@ export default [
             {
                 name: 'userId',
                 placeHolder: 'User Id',
+                type:'text',
                 value: '',
                 disabled: true
             },
             {
                 name: 'apiKey',
                 placeHolder: 'API Key',
+                type:'text',
                 value: '',
                 disabled: true
             },
             {
                 name: 'taskId',
                 placeHolder: 'Task ID',
+                type:'text',
                 value: '',
                 disabled: false
             },
             {
                 name: 'noteText',
                 placeHolder: 'Note',
+                type:'text',
                 value: '',
                 disabled: false
             },
@@ -298,30 +360,35 @@ export default [
             {
                 name: 'userId',
                 placeHolder: 'User Id',
+                type:'text',
                 value: '',
                 disabled: true
             },
             {
                 name: 'apiKey',
                 placeHolder: 'API Key',
+                type:'text',
                 value: '',
                 disabled: true
             },
             {
                 name: 'taskId',
                 placeHolder: 'Task ID',
+                type:'text',
                 value: '',
                 disabled: false
             },
             {
                 name: 'noteId',
                 placeHolder: 'Note Id',
+                type:'text',
                 value: '',
                 disabled: true
             },
             {
                 name: 'noteText',
                 placeHolder: 'Note',
+                type:'text',
                 value: '',
                 disabled: true
             },
@@ -336,24 +403,28 @@ export default [
             {
                 name: 'userId',
                 placeHolder: 'User Id',
+                type:'text',
                 value: '',
                 disabled: true
             },
             {
                 name: 'apiKey',
                 placeHolder: 'API Key',
+                type:'text',
                 value: '',
                 disabled: true
             },
             {
                 name: 'taskId',
                 placeHolder: 'Task ID',
+                type:'text',
                 value: '',
                 disabled: false
             },
             {
                 name: 'noteId',
                 placeHolder: 'Note Id',
+                type:'text',
                 value: '',
                 disabled: false
             },
