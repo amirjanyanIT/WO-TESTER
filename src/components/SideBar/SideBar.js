@@ -18,21 +18,19 @@ class SideBar extends Component {
         const mutatedActions = this.props.actions.map((action) => {
             return {...action,visibility:true}
         })
-        
         this.setState({
             actions:mutatedActions,
-            currentAction:this.props.currentAction,
+            currentAction:null,
         });
     }
-
     currentActionHandler(index) {
         this.props.dispatch({ type: 'SET_CURRENT_ACTION', payload: index });
-        this.props.dispatch({ type: 'SET_JSON_STATUS', payload: 'Passive' })
+        this.props.dispatch({ type: 'SET_JSON_STATUS', payload: 'Passive' });
+        this.setState({ currentAction:this.state.actions[index] });
     }
 
     filterHandler({ target }) {
         const filterValue = target.value;
-        
         const filteredActions = this.state.actions.map((action) => {
             if(action.label.toLowerCase().indexOf(filterValue.toLowerCase()) !== -1) {
                 return {
@@ -53,7 +51,6 @@ class SideBar extends Component {
     }
 
     render() {
-        console.log(this.state);
         return (
             <div className="SideBar">
                 <div className="sidebar-title">
