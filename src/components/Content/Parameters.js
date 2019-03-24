@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
 import { connect } from 'react-redux';
 import TextField from '@material-ui/core/TextField';
-
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
 // Actions
 import SetParameterValueAction from '../../Actions/Content/Parameters/SetParameterValueAction';
 
 class Parameters extends Component {
     setParameterValueHandler({ target }) {
-        SetParameterValueAction(this.props.dispatch,target.id, target.value)
+        SetParameterValueAction(this.props.dispatch,target.name, target.value)
     }
     render() {
         return (
@@ -22,14 +23,33 @@ class Parameters extends Component {
                                         <label htmlFor={parameter.name}>{parameter.name}</label>
                                     </Grid>
                                     <Grid item lg={8} md={8} sm={8} style={{textAlign:'left'}}>
-                                        <TextField 
-                                            type={parameter.type}
-                                            placeholder={parameter.placeHolder} 
-                                            id={parameter.name} value={parameter.value} 
-                                            disabled={parameter.disabled} 
-                                            onChange={this.setParameterValueHandler.bind(this)} 
-                                            style={{width:'80%'}}
-                                        />
+                                    
+                                        {parameter.type !== 'select' && 
+                                            (<TextField 
+                                                type={parameter.type}
+                                                placeholder={parameter.placeHolder} 
+                                                name={parameter.name} 
+                                                value={parameter.value} 
+                                                disabled={parameter.disabled} 
+                                                onChange={this.setParameterValueHandler.bind(this)} 
+                                                style={{width:'80%'}}
+                                            />)
+                                        }
+
+                                        {parameter.type === 'select' && 
+                                            (<Select
+                                                id={parameter.name}
+                                                disabled={parameter.disabled}
+                                                onChange={this.setParameterValueHandler.bind(this)}
+                                                style={{width:'80%'}}
+                                                name={parameter.name}
+                                                value={parameter.value ? parameter.value : 'placeHolder' }>
+                                                <MenuItem value='placeHolder' disabled>{parameter.placeHolder}</MenuItem>
+                                                {parameter.options.map((option,key) => {
+                                                    return <MenuItem key={key} value={option}>{option}</MenuItem>
+                                                })}
+                                            </Select>)
+                                        }
                                     </Grid>
                                 </Grid>
 

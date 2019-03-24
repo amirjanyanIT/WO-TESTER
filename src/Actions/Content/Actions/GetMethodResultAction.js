@@ -7,14 +7,11 @@ export default (dispatch,currentAction) => {
         
         currentAction.parameters.forEach(parameter => {
             switch(parameter.type){
-                case 'text':
-                    parameters[parameter.name] = $(`input[id=${parameter.name}]`).val()
-                break;
                 case 'date':
-                    parameters[parameter.name] = moment($(`input[id=${parameter.name}]`).val()).unix()
+                    parameters[parameter.name] = moment(parameter.value).unix()
                 break;
                 default:
-                    parameters[parameter.name] = $(`input[id=${parameter.name}]`).val()
+                    parameters[parameter.name] = parameter.value
             }
         })
         dispatch({type:'SET_JSON_STATUS',payload:'Loading'})

@@ -19,7 +19,7 @@ class Actions extends Component {
                     <div className="url-block">
                         <span className={`url-method method ${this.props.currentAction.method}`}> {this.props.currentAction.method.toUpperCase()} </span>
                         <span className="base-path">http://api.wo.softberg.org?action=</span>
-                        <span class="end-point">{this.props.currentAction.endPoint}</span>
+                        <span className="end-point">{this.props.currentAction.endPoint}</span>
                     </div>
                     <Fab className="call-button" onClick={this.getMethodResultHandler.bind(this)}>Call</Fab>
                 </Grid>

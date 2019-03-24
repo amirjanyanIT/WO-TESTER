@@ -64,8 +64,14 @@ export default [
             },
             {
                 name: 'status',
-                placeHolder: 'The Task Status [ hold, success, fail ]',
-                type:'text',
+                placeHolder: 'The Task status [ hold, success, fail ]',
+                type:'select',
+                options: [
+                    'ongoing',
+                    'hold',
+                    'success',
+                    'fail'
+                ],
                 value: '',
                 disabled: false
             }
@@ -136,29 +142,44 @@ export default [
             },
             {
                 name: 'dueDate',
-                placeHolder: 'due Date',
+                placeHolder: 'Due Date',
                 type:'date',
                 value: '',
                 disabled: false
             },
             {
                 name: 'status',
-                placeHolder: 'Status',
-                type:'text',
+                placeHolder: 'The Task status [ hold, success, fail ]',
+                type:'select',
+                options: [
+                    'ongoing',
+                    'hold',
+                    'success',
+                    'fail'
+                ],
                 value: '',
                 disabled: false
             },
             {
                 name: 'priority',
                 placeHolder: 'Priority',
-                type:'text',
+                type:'select',
+                options: [
+                    'low',
+                    'mid',
+                    'high'
+                ],
                 value: '',
                 disabled: false
             },
             {
                 name: 'accessibility',
                 placeHolder: 'Accessibility (Private,Public)',
-                type:'text',
+                type:'select',
+                options:[
+                    'private',
+                    'public'
+                ],
                 value: '',
                 disabled: false
             },
@@ -215,7 +236,13 @@ export default [
             {
                 name: 'status',
                 placeHolder: 'The Task status [ hold, success, fail ]',
-                type:'text',
+                type:'select',
+                options: [
+                    'ongoing',
+                    'hold',
+                    'success',
+                    'fail'
+                ],
                 value: '',
                 disabled: false
             },
@@ -251,7 +278,13 @@ export default [
             {
                 name: 'status',
                 placeHolder: 'The Task status [ hold, success, fail ]',
-                type:'text',
+                type:'select',
+                options: [
+                    'ongoing',
+                    'hold',
+                    'success',
+                    'fail'
+                ],
                 value: '',
                 disabled: false
             },
