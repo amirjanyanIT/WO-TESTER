@@ -269,8 +269,8 @@ export default [
                 disabled: true
             },
             {
-                name: 'title',
-                placeHolder: 'Title',
+                name: 'taskId',
+                placeHolder: 'Task Id',
                 type:'text',
                 value: '',
                 disabled: false
@@ -416,14 +416,14 @@ export default [
                 placeHolder: 'Note Id',
                 type:'text',
                 value: '',
-                disabled: true
+                disabled: false
             },
             {
                 name: 'noteText',
                 placeHolder: 'Note',
                 type:'text',
                 value: '',
-                disabled: true
+                disabled: false
             },
         ]
     },
