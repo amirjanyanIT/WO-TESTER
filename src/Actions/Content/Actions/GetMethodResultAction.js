@@ -1,38 +1,35 @@
 import moment from 'moment';
 import $ from 'jquery';
 
-function getBase64(file) {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = error => reject(error);
-    });
-}
-
 export default (dispatch,currentAction) => {
     let callURL = `https://api.wo.softberg.org/?action=${currentAction.endPoint}`;
-        let parameters = {}
+        let fileParams = {};
+        let formData = new FormData();
         
         currentAction.parameters.forEach(parameter => {
             switch(parameter.type){
                 case 'date':
-                parameters[parameter.name] = moment(parameter.value).unix()
+                    formData.append(parameter.name,moment(parameter.value).unix());
                 break;
                 case 'file':
-                    getBase64(parameter.value).then(data => parameters[parameter.name] = data)
+                    fileParams = {
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                    }
+                    formData.append(parameter.name,parameter.value);
                 break;
                 default:
-                parameters[parameter.name] = parameter.value;
+                    formData.append(parameter.name,parameter.value);
             }
         })
         dispatch({type:'SET_JSON_STATUS',payload:'Loading'})
         $.ajax({
             url:callURL,
             method:currentAction.method,
-            data:parameters,
-            processData:true,
+            data:formData,
             dataType:'json',
+            ...fileParams,
             success:(response) => {
                 dispatch({type:'SET_JSON',payload:response})
                 dispatch({type:'SET_JSON_STATUS',payload:'Success'})

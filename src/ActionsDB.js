@@ -490,8 +490,7 @@ export default [
                 type:'file',
                 value: '',
                 disabled: false
-            },
-            
+            }
         ]
     }
 ]

@@ -8,7 +8,6 @@ import SideBar from './SideBar/SideBar';
 import Content from './Content';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router'
-// Actions
 
 class Index extends Component{ 
     componentDidMount() {
@@ -28,7 +27,6 @@ class Index extends Component{
         )
     }
 }
-
 
 const mapStateToProps = (dispatch) => {
     return dispatch;
