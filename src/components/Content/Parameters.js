@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
 import { connect } from 'react-redux';
+import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -9,7 +10,12 @@ import SetParameterValueAction from '../../Actions/Content/Parameters/SetParamet
 
 class Parameters extends Component {
     setParameterValueHandler({ target }) {
-        SetParameterValueAction(this.props.dispatch,target.name, target.value)
+        if(target.type !== 'file') {
+            SetParameterValueAction(this.props.dispatch,target.name, target.value)
+        }
+        else {
+            SetParameterValueAction(this.props.dispatch,target.name, target.files[0]);
+        }
     }
     render() {
         return (
@@ -24,7 +30,7 @@ class Parameters extends Component {
                                     </Grid>
                                     <Grid item lg={8} md={8} sm={8} style={{textAlign:'left'}}>
                                     
-                                        {parameter.type !== 'select' && 
+                                        {parameter.type === 'text' || parameter.type === 'date' ? 
                                             (<TextField 
                                                 type={parameter.type}
                                                 placeholder={parameter.placeHolder} 
@@ -34,7 +40,7 @@ class Parameters extends Component {
                                                 onChange={this.setParameterValueHandler.bind(this)} 
                                                 style={{width:'80%'}}
                                             />)
-                                        }
+                                        : '' }
 
                                         {parameter.type === 'select' && 
                                             (<Select
@@ -49,6 +55,21 @@ class Parameters extends Component {
                                                     return <MenuItem key={key} value={option}>{option}</MenuItem>
                                                 })}
                                             </Select>)
+                                        }
+
+                                        {parameter.type === 'file' &&
+                                            (<Button
+                                                label='My Label'
+                                                variant="contained"
+                                                color="primary"
+                                                className="file-input">
+                                                <input 
+                                                    type="file" 
+                                                    onChange={this.setParameterValueHandler.bind(this)}
+                                                    disabled={parameter.disabled}
+                                                    name={parameter.name}
+                                                />
+                                             </Button>)
                                         }
                                     </Grid>
                                 </Grid>

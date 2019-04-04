@@ -31,11 +31,24 @@ export default (state = initialState, action) => {
                 ...state,
                 actions
             }
-        case 'SET_CURRENT_ACTION':
-            return {
-                ...state,
-                currentAction: state.actions[action.payload]
-            }
+        case 'SET_CURRENT_ACTION_BY_ENDPOINT':
+                let newState = {};
+                    newState.actions = [];
+                    newState.currentAction = null;
+                for(let param in state) {
+                    if(param === 'actions'){ 
+                        state[param].forEach(method => {
+                            if(method.endPoint === action.payload) {
+                                newState.currentAction = method;
+                            }
+                            newState.actions.push(method);
+                        })
+                    }
+                }
+                return {
+                    ...state,
+                    ...newState
+                }
         case 'SET_CURRENT_ACTION_PARAMETER_VALUE':
             let currentAction = state.currentAction;
             let { parameters } = currentAction;
@@ -55,6 +68,13 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 currentAction
+            }
+        case 'UPDATE_ACTIONS':
+            
+        
+            return {
+                currentAction:null,
+                actions:[]
             }
         default:
             return state;

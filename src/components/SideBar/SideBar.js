@@ -6,7 +6,9 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import TextField from '@material-ui/core/TextField';
 
-import SetCurrentAction from '../../Actions/SideBar/SetCurrentAction'
+import SetCurrentAction from '../../Actions/SideBar/SetCurrentAction';
+import AddPropsForFilter from '../../Actions/SideBar/AddPropsForFilter';
+import SortActionsByCategories from '../../Actions/SideBar/SortActionsByCategories';
 class SideBar extends Component {
     constructor() {
         super();
@@ -16,21 +18,15 @@ class SideBar extends Component {
         }
     }
 
-    componentDidMount() {
-        const mutatedActions = this.props.actions.map((action) => {
-            return {...action,visibility:true}
-        })
-        this.setState({
-            actions:mutatedActions,
-            currentAction:null,
-        });
+    currentActionHandler(endPoint){
+        SetCurrentAction(this.props.dispatch,endPoint)
     }
 
-    currentActionHandler(index) {
-        SetCurrentAction(this.props.dispatch,index)
-        this.setState({ currentAction:this.state.actions[index] });
+    componentDidMount(){
+        let actions = AddPropsForFilter(this.props.actions);      
+            actions = SortActionsByCategories(actions);  
+        this.setState({ actions, currentAction:null });
     }
-
 
     filterHandler({ target }) {
         const filterValue = target.value;
@@ -67,7 +63,7 @@ class SideBar extends Component {
                                 (
                                     <ListItem button
                                         className={(this.state.currentAction && action.label === this.state.currentAction.label ? 'list-item active' : 'list-item')}
-                                        onClick={this.currentActionHandler.bind(this, index)}
+                                        onClick={this.currentActionHandler.bind(this, action.endPoint)}
                                         key={index}>
                                         
                                         <ListItemText className="item-text">

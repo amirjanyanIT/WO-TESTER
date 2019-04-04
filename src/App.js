@@ -12,7 +12,7 @@ import './styles/Title.css';
 import SignIn from './components/SignIn';
 import Index from './components/index';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-
+import { connect } from 'react-redux';
 
 class App extends Component {
   render() {
@@ -27,6 +27,10 @@ class App extends Component {
   }
 }
 
+const mapStateToProps = ({ Actions }) => {
+  return { 
+    Actions
+  }
+}
 
-
-export default App;
+export default connect(mapStateToProps)(App);

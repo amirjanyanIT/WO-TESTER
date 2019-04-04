@@ -15,6 +15,7 @@ export default [
             {
                 name: 'apiKey',
                 placeHolder: 'API Key',
+                type:'text',
                 value: '',
                 disabled: true
             },
@@ -323,7 +324,7 @@ export default [
         method: 'get',
         endPoint: 'task_getTaskNotes',
         label: 'Get Task Notes',
-        category: 'Task',
+        category: 'Note',
         parameters: [
             {
                 name: 'userId',
@@ -352,7 +353,7 @@ export default [
         method: 'post',
         endPoint: 'task_createTaskNote',
         label: 'Create Task note',
-        category: 'Task',
+        category: 'Note',
         parameters: [
             {
                 name: 'userId',
@@ -388,7 +389,7 @@ export default [
         method: 'put',
         endPoint: 'task_updateTaskNote',
         label: 'Update Task Note',
-        category: 'Task',
+        category: 'Note',
         parameters: [
             {
                 name: 'userId',
@@ -431,7 +432,7 @@ export default [
         method: 'delete',
         endPoint: 'task_deleteTaskNote',
         label: 'Delete Task Note',
-        category: 'Task',
+        category: 'Note',
         parameters: [
             {
                 name: 'userId',
@@ -461,6 +462,36 @@ export default [
                 value: '',
                 disabled: false
             },
+        ]
+    },
+    {
+        method: 'post',
+        endPoint: 'user_setUserPhoto',
+        label: 'Set User Photo',
+        category: 'User',
+        parameters: [
+            {
+                name: 'userId',
+                placeHolder: 'User Id',
+                type:'text',
+                value: '',
+                disabled: true
+            },
+            {
+                name: 'apiKey',
+                placeHolder: 'API Key',
+                type:'text',
+                value: '',
+                disabled: true
+            },
+            {
+                name: 'photo',
+                placeHolder: 'Photo',
+                type:'file',
+                value: '',
+                disabled: false
+            },
+            
         ]
     }
 ]

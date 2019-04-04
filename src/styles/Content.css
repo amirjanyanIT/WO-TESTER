@@ -142,3 +142,7 @@
     color: rgb(37, 180, 109);
     font-weight: bold; 
 }
+
+.file-input {
+    margin-top: 10px !important;
+}
