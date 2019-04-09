@@ -30,12 +30,12 @@ class Parameters extends Component {
                                     </Grid>
                                     <Grid item lg={8} md={8} sm={8} style={{textAlign:'left'}}>
                                     
-                                        {parameter.type === 'text' || parameter.type === 'date' ? 
+                                        {parameter.type === 'text' || parameter.type === 'datetime-local' ? 
                                             (<TextField 
                                                 type={parameter.type}
                                                 placeholder={parameter.placeHolder} 
                                                 name={parameter.name} 
-                                                value={parameter.value} 
+                                                value={parameter.value}
                                                 disabled={parameter.disabled} 
                                                 onChange={this.setParameterValueHandler.bind(this)} 
                                                 style={{width:'80%'}}

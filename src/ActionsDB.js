@@ -144,7 +144,7 @@ export default [
             {
                 name: 'dueDate',
                 placeHolder: 'Due Date',
-                type:'date',
+                type:'datetime-local',
                 value: '',
                 disabled: false
             },
@@ -230,7 +230,7 @@ export default [
             {
                 name: 'dueDate',
                 placeHolder: 'Due Date',
-                type:'date',
+                type:'datetime-local',
                 value: '',
                 disabled: false
             },
