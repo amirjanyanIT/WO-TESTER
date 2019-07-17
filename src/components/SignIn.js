@@ -60,7 +60,7 @@ class SignIn extends Component {
         if (this.validate()) {
             SignInAction(
                 this.props.dispatch,
-                this.setState,
+                this.setState.bind(this),
                 this.props.history,
                 this.state.form
             );

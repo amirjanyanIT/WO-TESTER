@@ -43,7 +43,6 @@ class Response extends Component {
                      </div>
                     )
                 }
-                
                 { this.props.Json.status === 'Loading' &&   
                     (
                         <div className="loader-style">
@@ -51,7 +50,6 @@ class Response extends Component {
                         </div>
                     )
                 }
-
                 {
                   this.props.Json.status === 'Success' &&   
                   (<>
